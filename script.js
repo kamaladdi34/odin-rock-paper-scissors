@@ -6,7 +6,6 @@ function getComputerChoice()
 function getUserChoice()
 {
     let userChoice = prompt("Rock Paper Scissors?").toLowerCase();
-    console.log(`User choice is ${userChoice}`);
     if(userChoice == "rock" || userChoice == "paper" ||userChoice == "scissors")
     {
         return userChoice;
@@ -24,9 +23,7 @@ function playRound(userChoice, computerChoice)
     {
         roundResult = null;
     }
-    
     console.log(`User choice is "${userChoice}", computer choice is "${computerChoice}"`);
-
     if(userChoice == computerChoice)
     {
         roundResult = "Draw";
