@@ -23,6 +23,7 @@ function playRound(userChoice, computerChoice)
     {
         return userChoice;
     }
+    console.log(`User choice is "${userChoice}", computer choice is "${computerChoice}"`);
     if(userChoice == computerChoice)
     {
         return("Draw");
@@ -47,6 +48,13 @@ function playRound(userChoice, computerChoice)
 
 function game()
 {
-    console.log(playRound(getUserChoice(),getComputerChoice()));
+    let roundResult = playRound(getUserChoice(),getComputerChoice());
+    if(roundResult == null)
+    {
+        console.log("Wrong user input");
+        return;
+    }
+    console.log(`${roundResult} is the winner!`);
+
 }
 game();
