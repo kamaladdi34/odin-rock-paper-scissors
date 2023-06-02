@@ -41,3 +41,9 @@ function playRound(userChoice, computerChoice)
         return("Computer");
     }
 }
+
+function game()
+{
+    console.log(playRound(getUserChoice(),getComputerChoice()));
+}
+game();
