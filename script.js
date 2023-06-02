@@ -10,33 +10,34 @@ function getUserChoice()
     console.log(`User choice is ${userChoice}`);
     if(userChoice == "Rock" || userChoice == "Paper" ||userChoice == "Scissors")
     {
-        playRound(userChoice,getComputerChoice())
+        return userChoice;
     }
     else
     {
-        console.log(`USer choice "${userChoice}" is invalid`)
+        console.log(`Invalid user Choice "${userChoice}"`)
+        return null;
     }
 }
 function playRound(userChoice, computerChoice)
 {
     if(userChoice == computerChoice)
     {
-        console.log("Draw!")
+        return("Draw");
     }
     if (userChoice == "Rock" && computerChoice == "Scissors")
     {
-        console.log("User wins!")
+        return("User");
     }
     else if (userChoice == "Paper" && computerChoice == "Rock")
     {
-        console.log("User wins!")
+        return("User");
     }
     else if (userChoice == "Scissors" && computerChoice == "Paper")
     {
-        console.log("User wins!")
+        return("User");
     }
     else
     {
-        console.log("Computer wins!")
+        return("Computer");
     }
 }
