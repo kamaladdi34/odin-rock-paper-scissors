@@ -54,7 +54,11 @@ function game()
         console.log("Wrong user input");
         return;
     }
+    if(roundResult == "Draw")
+    {
+        console.log("It's a Draw!");
+        return;
+    }
     console.log(`${roundResult} is the winner!`);
-
 }
 game();
