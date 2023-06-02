@@ -6,7 +6,11 @@ function getComputerChoice()
 function getUserChoice()
 {
     let userChoice = prompt("Rock Paper Scissors?");
-    if(userChoice == null) return userChoice;
+    if(userChoice == null) 
+    {
+        console.log("User didn't input a choice");
+        return userChoice;
+    }
     userChoice = userChoice.toLowerCase();
     if(userChoice == "rock" || userChoice == "paper" ||userChoice == "scissors")
     {
