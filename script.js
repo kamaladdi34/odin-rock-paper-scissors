@@ -19,46 +19,47 @@ function getUserChoice()
 }
 function playRound(userChoice, computerChoice)
 {
+    let roundResult = null;
     if(userChoice == null)
     {
-        return userChoice;
+        roundResult = null;
     }
+    
     console.log(`User choice is "${userChoice}", computer choice is "${computerChoice}"`);
+
     if(userChoice == computerChoice)
     {
-        return("Draw");
+        roundResult = "Draw";
     }
     if (userChoice == "rock" && computerChoice == "scissors")
     {
-        return("User");
+        roundResult = "User"
     }
     else if (userChoice == "paper" && computerChoice == "rock")
     {
-        return("User");
+        roundResult = "User"
     }
     else if (userChoice == "scissors" && computerChoice == "paper")
     {
-        return("User");
+        roundResult = "User"
     }
     else
     {
-        return("Computer");
+        roundResult = "Computer"
     }
+    if(roundResult == null)
+    {
+        return "Wrong user choice input";
+    }
+    if(roundResult == "Draw")
+    {
+        return "It's a Draw!";
+    }
+    return`${roundResult} is the winner!`;
 }
 
 function game()
 {
-    let roundResult = playRound(getUserChoice(),getComputerChoice());
-    if(roundResult == null)
-    {
-        console.log("Wrong user input");
-        return;
-    }
-    if(roundResult == "Draw")
-    {
-        console.log("It's a Draw!");
-        return;
-    }
-    console.log(`${roundResult} is the winner!`);
+    console.log(playRound(getUserChoice(), getComputerChoice()))
 }
 game();
