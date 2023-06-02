@@ -21,7 +21,7 @@ function playRound(userChoice, computerChoice)
     let roundResult = null;
     if(userChoice == null)
     {
-        roundResult = null;
+        return "Wrong user choice input";
     }
     console.log(`User choice is "${userChoice}", computer choice is "${computerChoice}"`);
     if(userChoice == computerChoice)
