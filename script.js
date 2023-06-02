@@ -6,9 +6,8 @@ function getComputerChoice()
 function getUserChoice()
 {
     let userChoice = prompt("Rock Paper Scissors?").toLowerCase();
-    userChoice[0].toUpperCase();
     console.log(`User choice is ${userChoice}`);
-    if(userChoice == "Rock" || userChoice == "Paper" ||userChoice == "Scissors")
+    if(userChoice == "rock" || userChoice == "paper" ||userChoice == "scissors")
     {
         return userChoice;
     }
@@ -20,19 +19,23 @@ function getUserChoice()
 }
 function playRound(userChoice, computerChoice)
 {
+    if(userChoice == null)
+    {
+        return userChoice;
+    }
     if(userChoice == computerChoice)
     {
         return("Draw");
     }
-    if (userChoice == "Rock" && computerChoice == "Scissors")
+    if (userChoice == "rock" && computerChoice == "scissors")
     {
         return("User");
     }
-    else if (userChoice == "Paper" && computerChoice == "Rock")
+    else if (userChoice == "paper" && computerChoice == "rock")
     {
         return("User");
     }
-    else if (userChoice == "Scissors" && computerChoice == "Paper")
+    else if (userChoice == "scissors" && computerChoice == "paper")
     {
         return("User");
     }
