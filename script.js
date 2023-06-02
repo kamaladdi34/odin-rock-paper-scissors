@@ -5,7 +5,9 @@ function getComputerChoice()
 }
 function getUserChoice()
 {
-    let userChoice = prompt("Rock Paper Scissors?").toLowerCase();
+    let userChoice = prompt("Rock Paper Scissors?");
+    if(userChoice == null) return userChoice;
+    userChoice = userChoice.toLowerCase();
     if(userChoice == "rock" || userChoice == "paper" ||userChoice == "scissors")
     {
         return userChoice;
