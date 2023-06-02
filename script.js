@@ -1,4 +1,4 @@
-let hands = ["Rock","Paper", "Scissors"];
+let hands = ["rock","paper", "scissors"];
 function getComputerChoice()
 {
     return hands[Math.floor(Math.random()*hands.length)];
