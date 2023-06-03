@@ -20,7 +20,7 @@ function getUserChoice()
 function checkUserChoice(choice)
 {
     choice = choice.toLowerCase();
-    if(choice == "rock" || choice == "paper" ||choice == "scissors")
+    if(hands.includes(choice))
     {
         return choice;
     }
@@ -38,9 +38,7 @@ function playRound(userChoice, computerChoice)
         return "Wrong user choice input";
     }
     console.log(`User choice is "${userChoice}", computer choice is "${computerChoice}"`);
-    if (userChoice == "rock" && computerChoice == "scissors" ||
-        userChoice == "paper" && computerChoice == "rock" ||
-        userChoice == "scissors" && computerChoice == "paper")
+    if (userChoice == "rock" && computerChoice == "scissors" || userChoice == "paper" && computerChoice == "rock" || userChoice == "scissors" && computerChoice == "paper")
     {
         roundWinner = "User"
     }
