@@ -38,15 +38,9 @@ function playRound(userChoice, computerChoice)
         return "Wrong user choice input";
     }
     console.log(`User choice is "${userChoice}", computer choice is "${computerChoice}"`);
-    if (userChoice == "rock" && computerChoice == "scissors")
-    {
-        roundWinner = "User"
-    }
-    else if (userChoice == "paper" && computerChoice == "rock")
-    {
-        roundWinner = "User"
-    }
-    else if (userChoice == "scissors" && computerChoice == "paper")
+    if (userChoice == "rock" && computerChoice == "scissors" ||
+        userChoice == "paper" && computerChoice == "rock" ||
+        userChoice == "scissors" && computerChoice == "paper")
     {
         roundWinner = "User"
     }
@@ -57,10 +51,6 @@ function playRound(userChoice, computerChoice)
     else
     {
         roundWinner = "Computer";
-    }
-    if(roundWinner == null)
-    {
-        return "Wrong user choice input";
     }
     return`${roundWinner} is the winner!`;
 }
