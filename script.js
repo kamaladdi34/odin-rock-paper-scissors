@@ -11,14 +11,22 @@ function getUserChoice()
         console.log("User didn't input a choice");
         return userChoice;
     }
-    userChoice = userChoice.toLowerCase();
-    if(userChoice == "rock" || userChoice == "paper" ||userChoice == "scissors")
+    else
     {
-        return userChoice;
+        return checkUserChoice(userChoice);
+    }
+
+}
+function checkUserChoice(choice)
+{
+    choice = choice.toLowerCase();
+    if(choice == "rock" || choice == "paper" ||choice == "scissors")
+    {
+        return choice;
     }
     else
     {
-        console.log(`Invalid user Choice "${userChoice}"`)
+        console.log(`Invalid user Choice "${choice}"`)
         return null;
     }
 }
