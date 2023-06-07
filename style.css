@@ -67,5 +67,7 @@ body{
 .round-info, .game-winner{
     text-align: center;
     font-size: 18px;
+}
+.game-winner{
     padding-top: 15px;
 }
