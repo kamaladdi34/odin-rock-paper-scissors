@@ -34,6 +34,10 @@ function playRound(userChoice, computerChoice) {
   if (userChoice === null) {
     return "Wrong user choice input";
   }
+  if(userScore == 5 || computerScore == 5)
+  {
+    resetScore();
+  }
   updateChoicesGraphics(userChoice,computerChoice)
   if (
     (userChoice === "rock" && computerChoice === "scissors") ||
@@ -89,4 +93,9 @@ function updateWinnerText()
   {
     return 'first to 5 wins the game! 😁'
   }
+}
+function resetScore()
+{
+  userScore = 0;
+  computerScore = 0;
 }
