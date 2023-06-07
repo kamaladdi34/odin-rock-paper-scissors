@@ -15,7 +15,7 @@ function playRound(userChoice, computerChoice) {
   if (userChoice === null) {
     return "Wrong user choice input";
   }
-  if(userScore == 5 || computerScore == 5)
+  if(isGameOver())
   {
     resetScore();
   }
@@ -36,7 +36,10 @@ function playRound(userChoice, computerChoice) {
   scores.textContent = `${userScore} - ${computerScore}`;
   gameWinner.textContent = updateWinnerText();
 }
-
+function isGameOver()
+{
+  return userScore == 5 || computerScore == 5;
+}
 userButtons.forEach((button)=>{
   button.addEventListener('click',(e)=> {
     playRound(e.target.getAttribute('data-choice'),getComputerChoice())
@@ -52,13 +55,10 @@ function getEmojiFromChoice(choice){
   switch(choice){
     case 'scissors':
       return '✂️'
-      break;
     case 'rock':
       return '🪨'
-      break;
     case 'paper':
       return '📄'
-      break;
   }
 }
 
