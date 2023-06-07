@@ -41,6 +41,9 @@ body{
     border-radius: 69px;
     border: 2px dashed rgb(221, 221, 221);
     font-size: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .computer-side, .user-side{
     display: flex;
