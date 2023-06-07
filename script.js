@@ -10,26 +10,6 @@ function getComputerChoice() {
   return hands[Math.floor(Math.random() * hands.length)];
 }
 
-function getUserChoice() {
-  let userChoice = prompt("Rock Paper Scissors?");
-  if (userChoice === null) {
-    console.log("User didn't input a choice");
-    return userChoice;
-  } else {
-    return checkUserChoice(userChoice);
-  }
-}
-
-function checkUserChoice(choice) {
-  choice = choice.toLowerCase();
-  if (hands.includes(choice)) {
-    return choice;
-  } else {
-    console.log(`Invalid user choice "${choice}"`);
-    return null;
-  }
-}
-
 function playRound(userChoice, computerChoice) {
   if (userChoice === null) {
     return "Wrong user choice input";
@@ -60,13 +40,11 @@ userButtons.forEach((button)=>{
     playRound(e.target.getAttribute('data-choice'),getComputerChoice())
   })
 })
-function updateChoicesGraphics(userChoice,computerChoice)
-{
+function updateChoicesGraphics(userChoice,computerChoice){
   userChoiceEL.textContent = getEmojiFromChoice(userChoice);
   computerChoiceEL.textContent = getEmojiFromChoice(computerChoice);
 }
-function getEmojiFromChoice(choice)
-{
+function getEmojiFromChoice(choice){
   switch(choice){
     case 'scissors':
       return '✂️'
@@ -79,23 +57,18 @@ function getEmojiFromChoice(choice)
       break;
   }
 }
-function updateWinnerText()
-{
-  if(userScore==5)
-  {
+function updateWinnerText(){
+  if(userScore == 5){
     return 'you won the game!, great job! 😀'
   }
-  else if(computerScore==5)
-  {
+  else if(computerScore == 5){
     return 'oh oh!, looks like robot won! 😞'
   }
-  else
-  {
+  else{
     return 'first to 5 wins the game! 😁'
   }
 }
-function resetScore()
-{
+function resetScore(){
   userScore = 0;
   computerScore = 0;
 }
