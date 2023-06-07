@@ -6,6 +6,7 @@ const scores = document.querySelector('.scores > p')
 const roundInfo = document.querySelector('.round-info');
 const gameWinner = document.querySelector('.game-winner');
 let userScore = 0, computerScore = 0;
+
 function getComputerChoice() {
   return hands[Math.floor(Math.random() * hands.length)];
 }
@@ -18,7 +19,7 @@ function playRound(userChoice, computerChoice) {
   {
     resetScore();
   }
-  updateChoicesGraphics(userChoice,computerChoice)
+  updateChoicesGraphics(userChoice,computerChoice);
   if (
     (userChoice === "rock" && computerChoice === "scissors") ||
     (userChoice === "paper" && computerChoice === "rock") ||
@@ -35,15 +36,18 @@ function playRound(userChoice, computerChoice) {
   scores.textContent = `${userScore} - ${computerScore}`;
   gameWinner.textContent = updateWinnerText();
 }
+
 userButtons.forEach((button)=>{
   button.addEventListener('click',(e)=> {
     playRound(e.target.getAttribute('data-choice'),getComputerChoice())
   })
 })
+
 function updateChoicesGraphics(userChoice,computerChoice){
   userChoiceEL.textContent = getEmojiFromChoice(userChoice);
   computerChoiceEL.textContent = getEmojiFromChoice(computerChoice);
 }
+
 function getEmojiFromChoice(choice){
   switch(choice){
     case 'scissors':
@@ -57,17 +61,19 @@ function getEmojiFromChoice(choice){
       break;
   }
 }
+
 function updateWinnerText(){
   if(userScore == 5){
-    return 'you won the game!, great job! 😀'
+    return 'you won the game!, great job! 😀';
   }
   else if(computerScore == 5){
-    return 'oh oh!, looks like robot won! 😞'
+    return 'oh oh!, looks like robot won! 😞';
   }
   else{
-    return 'first to 5 wins the game! 😁'
+    return 'first to 5 wins the game! 😁';
   }
 }
+
 function resetScore(){
   userScore = 0;
   computerScore = 0;
