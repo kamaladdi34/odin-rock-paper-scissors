@@ -64,3 +64,8 @@ body{
     background-color: rgb(240, 240, 240);
     cursor: pointer;
 }
+.round-info, .game-winner{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 15px;
+}
